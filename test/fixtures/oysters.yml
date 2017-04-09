@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  oyster_type: MyString
+  description: MyText
+  location: MyString
+  salinity: MyString
+  size: MyString
+
+two:
+  oyster_type: MyString
+  description: MyText
+  location: MyString
+  salinity: MyString
+  size: MyString
