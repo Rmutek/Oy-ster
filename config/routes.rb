@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get "/" => "restaurants#index"
   get "/restaurants" => "restaurants#index"
+  get "/restaurantsall" => "restaurants#home"
   get "/restaurants/:id" => "restaurants#show"
 
   get "/newreview" => "oyster_reviews#new"

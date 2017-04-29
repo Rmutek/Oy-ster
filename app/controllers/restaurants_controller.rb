@@ -9,4 +9,9 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find_by(id: params[:id])
     render "show.html.erb"
   end 
+
+  def home
+    @restaurants = Restaurant.all 
+    render "home.html.erb"
+  end 
 end

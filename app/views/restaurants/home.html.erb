@@ -1,0 +1,7 @@
+<h2>Restaurants</h2>
+<% @restaurants.each do |restaurant| %>
+<h4><a href="restaurants/<%= restaurant.id %>"><%=restaurant.name%></a><h4>
+<p><%=restaurant.address%></p>
+<p><%=restaurant.hours%></p>
+<p><%=restaurant.specials%></p>
+<% end %>
