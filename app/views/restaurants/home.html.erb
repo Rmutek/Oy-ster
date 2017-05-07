@@ -1,7 +1,121 @@
-<h2>Restaurants</h2>
-<% @restaurants.each do |restaurant| %>
-<h4><a href="restaurants/<%= restaurant.id %>"><%=restaurant.name%></a><h4>
-<p><%=restaurant.address%></p>
-<p><%=restaurant.hours%></p>
-<p><%=restaurant.specials%></p>
-<% end %>
+<body class="blog-cols-page">
+ <div class="blog-cols-header">
+    <div class="container">
+      <h1>
+        All Restaurants
+      </h1>
+      <p>
+        Food is everything we are. It's an extension of nationalist feeling, ethnic feeling, your personal history, your province, your region, your tribe, your grandma. It's inseparable from those from the get-go. 
+      </p>
+      <p> --Anthony Bourdain</p>
+    </div>
+  </div>
+ <div class="blog-cols-wrapper">
+    <div class="container">
+
+    <% @restaurants.each do |restaurant| %>
+      <a href="restaurants/<%= restaurant.id %>" class="card">
+        <div class="card-wrapper">
+          <div class="card-bg">
+          <img class="restaurant-image" src="<%= restaurant.image %>" alt="Loading" style="width: 100%">
+          </div>
+          <div class="card-intro">
+            <div class="card-title">
+             <%= restaurant.name %>
+            </div>
+            <div class="card-min-read">
+              <%= restaurant.hours %>
+            </div>
+            <p class="card-description">
+              <%= restaurant.about %>
+            </p>
+          </div>
+        </div>
+      </a>
+      <% end %>
+
+      </div>
+    </div>
+ 
+  <nav class="blog-pager">
+    <ul class="pager">
+      <li><a href="#">&larr; Previous</a></li>
+      <li><a href="#">Next &rarr;</a></li>
+    </ul>
+  </nav>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="title">
+            About Oy'ster
+          </div>
+          <ul class="menu">
+            <li>
+              <a href="#">Home Pages</a>
+            </li>
+            <li>
+              <a href="#">Coming Soon</a>
+            </li>
+            <li>
+              <a href="#">Coming Soon</a>
+            </li>
+            <li>
+              <a href="#">Coming Soon</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <div class="title">
+            Connect with us
+          </div>
+          <ul class="menu">
+            <li>
+              <a href="#">
+                <i class="fa fa-instagram"></i>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-twitter"></i>
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-facebook"></i>
+                Facebook
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4 newsletter">
+          <div class="title">
+            Get Oy'ster updates
+          </div>
+          <p>
+            Enter your email address for news.
+          </p>
+
+          <form action="#">
+            <input type="email" class="form-control" placeholder="Email address" />
+
+            <button type="submit">
+              <i class="fa fa-chevron-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="bottom">
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Legal</a></li>
+          <li><a href="#">Language</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+

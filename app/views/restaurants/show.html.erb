@@ -1,8 +1,50 @@
-<h1><%=@restaurant.name%></h1>
-<!-- <p><%=@restaurant.oyster_review[0].title%></p>
-<p><%=@restaurant.oyster_review[1].title%></p> -->
 
-<% @restaurant.oyster_review.each do |review| %> 
-<h4><%= review.title %></h4>
-<p><%= review.body %></p>
-<% end %> 
+  <div class="careers-header">
+    <section class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>
+            <%=@restaurant.name%>
+          </h1>
+          <p>
+            <%=@restaurant.website%>
+          </p>
+          <p>
+            <%=@restaurant.about%>
+          </p>
+          <p>
+            <%=@restaurant.specials%>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="careers-intro">
+    <div class="container">
+          <div class="careers-intro-gallery">
+        <div class="row">
+          <div class="col-sm-8">
+            <img src="images/unsplash/photo-1479243396208-be1751535cdb.jpeg" class="img-responsive">
+          </div>
+          <div class="col-sm-4">
+            <img src="images/unsplash/photo-1461988625982-7e46a099bf4f.jpeg" class="img-responsive" style="margin-bottom: 18px;">
+            <img src="images/unsplash/photo-1473213021768-ea962b488457.jpeg" class="img-responsive">
+          </div>
+        </div>
+      </div>
+    <% @restaurant.oyster_review.each do |review| %> 
+      <h3>
+        <%= review.title %>
+      </h3>
+      <p>
+        <%= review.body %>
+      </p>
+      <% end %> 
+    </div>
+  </div>
+
+ 
+    
+
+
