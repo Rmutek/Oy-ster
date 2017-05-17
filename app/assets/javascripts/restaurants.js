@@ -89,12 +89,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         return filteredLocation;
       },
       randomFilteredRestaurant: function() {
-        return {};
-        // if (this.filteredRestaurants.length > 0) {
-        //   return this.filteredLocation[0];
-        // } else {
-        //   return {};
-        // }
+        // return {};
+        if (this.filteredRestaurants.length > 0) {
+          var randomIndex = 0;
+          return this.filteredRestaurants[randomIndex];
+        } else {
+          return {};
+        }
       }
     }
   });
