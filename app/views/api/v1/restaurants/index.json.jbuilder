@@ -9,4 +9,9 @@ json.array! @restaurants.each do |restaurant|
   json.website restaurant.website
   json.about restaurant.about
   json.image restaurant.image
+  json.lat restaurant.lat 
+  json.long restaurant.long
+  json.neighborhood restaurant.neighborhood
+  json.guests restaurant.guests
+  json.price restaurant.price
 end 

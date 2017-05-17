@@ -14,4 +14,8 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all 
     render "home.html.erb"
   end 
+
+  def filter 
+    render "filter.html.erb"
+  end 
 end

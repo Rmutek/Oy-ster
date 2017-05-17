@@ -1,0 +1,67 @@
+
+<div id="app2">
+
+ <div>
+   <h2 for="exampleInputName">Search by location:</h2>
+
+   <div class="form-group">
+
+  <select v-model="location">
+    <option value="Lakeview">Lakeview</option>
+    <option value="Lincoln Park">Lincoln Park</option>
+    <option value="Oak Park">Oak Park</option>
+    <option value="Pilsen">Pilsen</option>
+    <option value="River North">River North</option>
+    <option value="West Loop">West Loop</option>
+    <option value="Wicker Park">Wicker Park</option>
+  </select>
+</div>
+ </div>
+
+  <div>
+  <div>
+   <h2 for="exampleInputName">Search by ambiance:</h2>
+  <div class="form-group">
+   <select v-model="ambiance">
+    <option value="Casual">Casual</option>
+    <option value="Dressy">Dressy</option>
+    <option value="Trendy">Trendy</option>
+  </select>
+</div>
+ </div>
+
+  <div>
+   <h2 for="exampleInputName">Search by price:</h2>
+
+   <div class="form-group">
+  <select v-model="price">
+    <option value="$">$</option>
+    <option value="$$">$$</option>
+    <option value="$$$">$$$</option>
+    <option value="$$$$">$$$$</option>
+  </select>
+</div>
+ </div>
+
+ <!-- <div class="form-action"> -->
+  <!-- <button v-on:click="filteredRestaurants('location')" class="btn-shadow btn-shadow-dark">Pick</button> -->
+  <h1>Number of matches: {{ filteredRestaurants.length }}</h1>
+  <div v-for="restaurant in filteredRestaurants">
+    <h2>{{ restaurant.name }}</h2>
+    <p>{{ restaurant.address }}</p>
+    <p>{{ restaurant.neighborhood }}</p>
+    <p>{{ restaurant.guests }}</p>
+    <p>{{ restaurant.price }}</p>
+  </div>
+  <h1>Random restauraunt</h1>
+  <div>
+    <h2>{{ randomFilteredRestaurant.name }}</h2>
+    <p>{{ randomFilteredRestaurant.address }}</p>
+    <p>{{ randomFilteredRestaurant.neighborhood }}</p>
+    <p>{{ randomFilteredRestaurant.guests }}</p>
+    <p>{{ randomFilteredRestaurant.price }}</p>
+  </div>
+</div>
+</div>
+
+ 
