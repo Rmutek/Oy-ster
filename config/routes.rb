@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get "/signup" => "users#new"
   post "/users" => "users#create"
+  get "/userrewards" => "users#show"
 
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"

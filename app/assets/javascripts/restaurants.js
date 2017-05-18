@@ -99,4 +99,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     }
   });
+
+  var app3 = new Vue({
+    el: '#app3',
+    data: {
+      restaurants: [],
+      location: "____",
+      ambiance: "_____",
+      price: "______",
+    },
+    mounted: function() {
+      $.get("/api/v1/restaurants", function(responseData) {
+        this.restaurants = responseData;
+      }.bind(this));
+    },
+    computed: {
+      avergeOysterQuality: function() {
+        var avergeOyster = this.restaurants.oyster_review.map(function(average) {
+          
+        });
+      }
+    }
+  });
 });

@@ -7,6 +7,11 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find_by(id: params[:id])
+
+    sum = 0 
+    @average_oyster_quality = @restaurant.oyster_review.each do |average| 
+      sum += average.oyster_quality 
+    end 
     render "show.html.erb"
   end 
 
