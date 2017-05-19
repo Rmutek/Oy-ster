@@ -27,4 +27,8 @@ class OysterReviewsController < ApplicationController
       redirect_to "/newreview"
     end
   end 
+
+  def show
+    
+  end 
 end

@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       randomFilteredRestaurant: function() {
         // return {};
         if (this.filteredRestaurants.length > 0) {
-          var randomIndex = 0;
+          var randomIndex = Math.floor((Math.random() * 10) - 1);
           return this.filteredRestaurants[randomIndex];
         } else {
           return {};
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     computed: {
       avergeOysterQuality: function() {
         var avergeOyster = this.restaurants.oyster_review.map(function(average) {
-          
+
         });
       }
     }

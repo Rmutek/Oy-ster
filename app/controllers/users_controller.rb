@@ -23,5 +23,34 @@ class UsersController < ApplicationController
     end 
   end
 
+  def show 
+    @review = OysterReview.all
+
+    sum = 0 
+    @review.each do |post|
+      if post.user_id == current_user.id
+        sum += post.user_id.to_i
+      end 
+    end 
+    @total = sum / current_user.id
+
+  @message =  
+    if @total == 0 
+      "Post your first review"
+    elsif @total <= 1
+      "Level One: Thank you for the support. You have earned one Oy'ster stick"
+    elsif @total <= 3 
+      "Level 2: Keep it up! Show this to your server at any Oy'ster restaurant and you will receive one free oyster"
+    elsif @total <= 5 
+      "Level 3: You Rock! Mingle with your fellow Oy'ster lovers at a Oy'ster happy hour"
+    else @total <=10 
+      "Level 4: Trendsetter. Come enjoy a day of oysters and live music at Oy'ster Fest"
+    end 
+
+    @name = current_user.first_name
+
+    render "show.html.erb"
+  end 
+
   
 end 

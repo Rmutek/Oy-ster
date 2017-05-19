@@ -168,14 +168,16 @@
     <p>
      
     </p> -->
-    <h2><%= @average_oyster_quality%></h2>
-    <h2>
+    <h2>Oyster Quality: <%= @average_oyster_quality %> | Shucking Quality: <%= @average_shucking_quality%> | Presentation: <%= @presentation%> </h2> 
+    </div>
+  <div class="index-photography-intro">
+    <h3>
       Reviews 
-    </h2>
+    </h3>
         <% @restaurant.oyster_review.each do |review| %> 
-      <h3>
+      <h4>
         <%= review.title %>
-      </h3>
+      </h4>
       <p>
         <%= review.body %>
       </p>
