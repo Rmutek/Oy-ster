@@ -38,13 +38,13 @@ class UsersController < ApplicationController
     if @total == 0 
       "Post your first review"
     elsif @total <= 1
-      "Level One: Thank you for the support. You have earned one Oy'ster stick"
+      "Level One: Thank you for sharing! You have earned one Oy'ster stick. Display this sticker proudly to show that you support a community of like-minded oyster lovers"
     elsif @total <= 3 
-      "Level 2: Keep it up! Show this to your server at any Oy'ster restaurant and you will receive one free oyster"
+      "Level 2: Keep Shucking! You have earned two free oysters. Show this to your server at any Oy'ster restaurant and you will receive an oyster for you and a firend"
     elsif @total <= 5 
-      "Level 3: You Rock! Mingle with your fellow Oy'ster lovers at a Oy'ster happy hour"
+      "Level 3: You are shucking fantastic! To thank you for making Oy'ster a success you have been invited to mingle with your fellow Oy'ster lovers at an Oy'ster happy hour"
     else @total <=10 
-      "Level 4: Trendsetter. Come enjoy a day of oysters and live music at Oy'ster Fest"
+      "Level 4: Pearl. Come enjoy a day of oysters and live music at Oy'ster Fest"
     end 
 
     @name = current_user.first_name
