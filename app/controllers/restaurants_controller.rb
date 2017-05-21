@@ -19,7 +19,7 @@ class RestaurantsController < ApplicationController
       sum2 += sum.shucking_quality.to_i
     end
     @average_shucking_quality = sum2 / @restaurant.oyster_review.length
-
+    
     sum3 = 0 
     @restaurant.oyster_review.each do |sum| 
       sum3 += sum.presentation.to_i

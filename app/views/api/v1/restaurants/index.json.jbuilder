@@ -14,4 +14,15 @@ json.array! @restaurants.each do |restaurant|
   json.neighborhood restaurant.neighborhood
   json.guests restaurant.guests
   json.price restaurant.price
+  json.oyster_review restaurant.oyster_review.each do |review| 
+    json.id review.id
+    json.title review.title
+    json.body review.body
+    json.oyster_quality review.oyster_quality
+    json.shucking_quality review.shucking_quality
+    json.presentation review.presentation
+    json.user_id review.user_id
+    json.restaurant_id review.restaurant_id
+    json.oyster_id review.oyster_id
+  end 
 end 

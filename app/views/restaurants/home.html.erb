@@ -9,7 +9,12 @@
       </p>
       <p> --Anthony Bourdain</p>
     </div>
-    <button>Order by Oyster Quality</button><button>Order by Shucking Quality</button><button>Order by Presentation</button>
+    <div id="app3">
+
+    <button v-on:click="setSortAttribute('oyster_quality')">Order by Oyster Quality</button>
+    <button v-on:click="setSortAttribute('shucking_quality')">Order by Shucking Quality</button>
+    <button v-on:click="setSortAttribute('presentation')">Order by Presentation</button>
+  </div>
   </div>
  <div class="blog-cols-wrapper">
     <div class="container">

@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       restaurants: [],
       location: "____",
       ambiance: "_____",
-      price: "______",
+      price: "______"
     },
     mounted: function() {
       $.get("/api/v1/restaurants", function(responseData) {
@@ -106,17 +106,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
       location: "____",
       ambiance: "_____",
       price: "______",
+      sortAttribute: "name"
     },
     mounted: function() {
       $.get("/api/v1/restaurants", function(responseData) {
         this.restaurants = responseData;
       }.bind(this));
     },
+    methods: {
+      setSortAttribute: function(inputAttribute) {
+        this.sortAttribute = inputAttribute;
+      }
+    },
     computed: {
-      avergeOysterQuality: function() {
-        var avergeOyster = this.restaurants.oyster_review.map(function(average) {
-
-        });
+      sortedRestaurants: function() {
+        var sorted = this.restaurants.sort(function(quality1, quality2) {
+          return quality1[this.sortAttribute] > quality2[this.sortAttribute];
+        }.bind(this)); 
+        return sorted;
       }
     }
   });
