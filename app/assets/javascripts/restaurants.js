@@ -85,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
           return dbPrice === enteredPrice;
         });
         console.log('filtered is', filteredLocation);
-
         return filteredLocation;
       },
       randomFilteredRestaurant: function() {
