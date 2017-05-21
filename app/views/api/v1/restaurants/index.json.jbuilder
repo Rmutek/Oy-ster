@@ -14,6 +14,11 @@ json.array! @restaurants.each do |restaurant|
   json.neighborhood restaurant.neighborhood
   json.guests restaurant.guests
   json.price restaurant.price
+  if restaurant.oyster_review.any?
+    json.average_oyster_quality restaurant.average_oyster_quality
+    json.average_shucking_quality restaurant.average_shucking_quality
+    json.average_presentation restaurant.average_presentation
+  end
   json.oyster_review restaurant.oyster_review.each do |review| 
     json.id review.id
     json.title review.title

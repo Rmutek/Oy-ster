@@ -106,7 +106,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       location: "____",
       ambiance: "_____",
       price: "______",
-      sortAttribute: "name"
+      sortAttribute: "name",
+      filterAttribute: "name"
     },
     mounted: function() {
       $.get("/api/v1/restaurants", function(responseData) {
@@ -116,14 +117,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
     methods: {
       setSortAttribute: function(inputAttribute) {
         this.sortAttribute = inputAttribute;
+      },
+      setFilterAttribute: function(input) {
+        this.filterAttribute = input;
       }
     },
     computed: {
       sortedRestaurants: function() {
-        var sorted = this.restaurants.sort(function(quality1, quality2) {
+        var sorted = this.restaurants.oyster_review.sort(function(quality1, quality2) {
           return quality1[this.sortAttribute] > quality2[this.sortAttribute];
         }.bind(this)); 
         return sorted;
+      },
+      filteredSpecials: function() {
+        var filtered = this.restaurants.filter(function(specials) {
+          return specials[this.filterAttribute].indexOf(this.filterAttribute) !== -1 ;
+        }.bind(this));
+        return filtered;
       }
     }
   });
