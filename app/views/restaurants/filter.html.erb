@@ -178,13 +178,15 @@
     <p>{{ restaurant.guests }}</p>
     <p>{{ restaurant.price }}</p>
   </div>
-  <h1>Random restauraunt</h1>
-  <div>
-    <h2>{{ randomFilteredRestaurant.name }}</h2>
-    <p>{{ randomFilteredRestaurant.address }}</p>
-    <p>{{ randomFilteredRestaurant.neighborhood }}</p>
-    <p>{{ randomFilteredRestaurant.guests }}</p>
-    <p>{{ randomFilteredRestaurant.price }}</p>
+  <div v-if="filteredRestaurants.length > 0">
+    <h1>Random restauraunt</h1>
+    <div>
+      <h2>{{ randomFilteredRestaurant.name }}</h2>
+      <p>{{ randomFilteredRestaurant.address }}</p>
+      <p>{{ randomFilteredRestaurant.neighborhood }}</p>
+      <p>{{ randomFilteredRestaurant.guests }}</p>
+      <p>{{ randomFilteredRestaurant.price }}</p>
+    </div>
   </div>
 </div>
 </div>

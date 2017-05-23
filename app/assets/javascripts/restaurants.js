@@ -90,7 +90,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       randomFilteredRestaurant: function() {
         // return {};
         if (this.filteredRestaurants.length > 0) {
-          var randomIndex = Math.floor((Math.random() * 10) - 1);
+          var randomIndex = Math.floor((Math.random() * this.filteredRestaurants.length));
+          console.log('huhhhh', randomIndex, this.filteredRestaurants[randomIndex]);
           return this.filteredRestaurants[randomIndex];
         } else {
           return {};
@@ -107,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       ambiance: "_____",
       price: "______",
       sortAttribute: "name",
-      filterAttribute: "name"
+      filterAttribute: ""
     },
     mounted: function() {
       $.get("/api/v1/restaurants", function(responseData) {
@@ -124,10 +125,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
     computed: {
       sortedRestaurants: function() {
-        var sorted = this.restaurants.oyster_review.sort(function(quality1, quality2) {
-          return quality1[this.sortAttribute] > quality2[this.sortAttribute];
-        }.bind(this)); 
-        return sorted;
+        // var sorted = this.restaurants.sort(function(quality1, quality2) {
+        //   return quality1[this.sortAttribute] - quality2[this.sortAttribute];
+        // }.bind(this)); 
+        // console.log('sorted by ' + this.sortAttribute, sorted.map(function(rest) { return rest.name }));
+        // return sorted;
+        var sorted = _.sortBy(this.restaurants, this.sortAttribute);
+        if (this.sortAttribute === 'name') {
+          return sorted;
+        } else {
+          return sorted.reverse();
+        }
       },
       filteredSpecials: function() {
         var filtered = this.restaurants.filter(function(specials) {

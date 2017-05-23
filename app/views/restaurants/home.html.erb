@@ -1,5 +1,5 @@
 <body class="blog-cols-page">
- <div class="blog-cols-header">
+  <div id="app3" class="blog-cols-header">
     <div class="container">
       <h1>
         All Restaurants
@@ -8,42 +8,37 @@
         Food is everything we are. It's an extension of nationalist feeling, ethnic feeling, your personal history, your province, your region, your tribe, your grandma. It's inseparable from those from the get-go. 
       </p>
       <p> --Anthony Bourdain</p>
+    
+    <div>
+      <button v-on:click="setSortAttribute('average_oyster_quality')">Order by Oyster Quality</button>
+      <button v-on:click="setSortAttribute('average_shucking_quality')">Order by Shucking Quality</button>
+      <button v-on:click="setSortAttribute('average_presentation')">Order by Presentation</button>
+      <button v-on:click="setFilterAttribute('specials')">Restaurants with Specials</button>
     </div>
-    <div id="app3">
-
-    <button v-on:click="setSortAttribute('oyster_quality')">Order by Oyster Quality</button>
-    <button v-on:click="setSortAttribute('shucking_quality')">Order by Shucking Quality</button>
-    <button v-on:click="setSortAttribute('presentation')">Order by Presentation</button>
-    <button v-on:click="setFilterAttribute('specials')">Restaurants with Specials</button>
   </div>
-  </div>
- <div class="blog-cols-wrapper">
-    <div class="container">
-
-    <% @restaurants.each do |restaurant| %>
-      <a href="restaurants/<%= restaurant.id %>" class="card">
-        <div class="card-wrapper">
-          <div class="card-bg">
-          <img class="restaurant-image" src="<%= restaurant.image %>" alt="Loading" style="width: 100%">
-          </div>
-          <div class="card-intro">
-            <div class="card-title">
-             <%= restaurant.name %>
+    <div class="blog-cols-wrapper">
+      <div class="container">
+          <a v-for="restaurant in sortedRestaurants" v-bind:href="'restaurants/' + restaurant.id" class="card">
+            <div class="card-wrapper">
+              <div class="card-bg">
+               <img class="restaurant-image" v-bind:src="restaurant.image" alt="Loading" style="width: 100%">
+              </div>
+              <div class="card-intro">
+                <div class="card-title">
+                  {{ restaurant.name }}
+                </div>
+                <div class="card-min-read">
+                  {{ restaurant.hours }}
+                </div>
+                <p class="card-description">
+                  {{ restaurant.about }}
+                </p>
+              </div>
             </div>
-            <div class="card-min-read">
-              <%= restaurant.hours %>
-            </div>
-            <p class="card-description">
-              <%= restaurant.about %>
-            </p>
-          </div>
-        </div>
-      </a>
-      <% end %>
-
+          </a>
       </div>
     </div>
- 
+
   <nav class="blog-pager">
     <ul class="pager">
       <li><a href="#">&larr; Previous</a></li>

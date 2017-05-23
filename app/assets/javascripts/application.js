@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require bootstrap-sprockets 
+//= require underscore
 //= require jquery_ujs
 //= require vue 
 //= require_tree .

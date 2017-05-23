@@ -9,6 +9,7 @@ class Restaurant < ApplicationRecord
       sum += review.oyster_quality.to_i 
     end
     @average_oyster_quality = sum / oyster_review.length
+    @average_oyster_quality
   end
 
   def average_shucking_quality
@@ -17,6 +18,7 @@ class Restaurant < ApplicationRecord
       sum2 += review.shucking_quality.to_i
     end
     @average_shucking_quality = sum2 / oyster_review.length
+    @average_shucking_quality
   end
 
   def average_presentation
@@ -25,5 +27,6 @@ class Restaurant < ApplicationRecord
       sum3 += review.presentation.to_i
     end 
     @presentation = sum3 / oyster_review.length
+    @presentation
   end
 end
