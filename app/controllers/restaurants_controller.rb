@@ -18,4 +18,8 @@ class RestaurantsController < ApplicationController
   def filter 
     render "filter.html.erb"
   end 
+
+  def smh
+    render "smh.html.erb"
+  end 
 end

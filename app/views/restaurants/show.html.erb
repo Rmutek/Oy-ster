@@ -123,19 +123,19 @@
     <div id="spacial-slider" class="slider-component fxSoftScale">
       <ul class="itemwrap">
         <li class="current">
-          <div class="pic"><img style="width: 100%" src="<%=@restaurant.image2 %>">
+          <div class="pic"><img style="width: 100%" src="<%= @restaurant.image2 %>">
           </div>
         </li>
         <li>
-          <div class="pic"><img style="width: 100%" src="<%=@restaurant.image3 %>">
+          <div class="pic"><img style="width: 100%" src="<%= @restaurant.image3 %>">
           </div>
         </li>
         <li>
-          <div class="pic"><img style="width: 100%" src="<%=@restaurant.image %>">
+          <div class="pic"><img style="width: 100%" src="/{{restaurant.image}}">
           </div>
         </li>
         <li>
-          <div class="pic"><img style="width: 100%" src="<%=@restaurant.image4 %>">
+          <div class="pic"><img style="width: 100%" src="/{{restaurant.image4}}">
           </div>
         </li>
       </ul>
@@ -168,6 +168,7 @@
     <p>
      
     </p> -->
+
     <h2>Oyster Quality: <%= @restaurant.average_oyster_quality %> | Shucking Quality: <%= @restaurant.average_shucking_quality %> | Presentation: <%= @restaurant.average_presentation%> </h2> 
     </div>
   <div class="index-photography-intro">
@@ -176,15 +177,33 @@
     </h3>
         <% @restaurant.oyster_review.each do |review| %> 
       <h4>
-        <%= review.title %>
+        Title: <%= review.title %>
       </h4>
       <p>
-        <%= review.body %>
+        Body: <%= review.body %>
       </p>
       <% end %> 
   </div>
+  <div class="index-photography-intro">
+<!--     <h2>
+      Description
+    </h2>
+    <p>
+     
+    </p> -->
 
-  <div class="index-photography-gallery">
+    <h2>More Information</h2> 
+        <h4>
+          Specials: <%=@restaurant.specials%>
+        </h4>
+        <h5>
+         <%=@restaurant.website%>
+        </h5>
+        <h5> 
+          <%=@restaurant.address%>
+        </h5>
+    </div>
+<!--   <div class="index-photography-gallery">
     <div class="container">
       <div class="row">
         <div class="col-sm-9">
@@ -207,8 +226,80 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="title">
+            About Oy'ster
+          </div>
+          <ul class="menu">
+            <li>
+              <a href="#">Home Page</a>
+            </li>
+            <li>
+              <a href="#">Coming Soon</a>
+            </li>
+<!--             <li>
+              <a href="#">Coming Soon</a>
+            </li>
+            <li>
+              <a href="#">Coming Soon</a>
+            </li> -->
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <div class="title">
+            Connect with us
+          </div>
+          <ul class="menu">
+            <li>
+              <a href="#">
+                <i class="fa fa-instagram"></i>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-twitter"></i>
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-facebook"></i>
+                Facebook
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4 newsletter">
+          <div class="title">
+            Get Oy'ster updates
+          </div>
+          <p>
+            Enter your email address for news.
+          </p>
 
+          <form action="#">
+            <input type="email" class="form-control" placeholder="Email address" />
+
+            <button type="submit">
+              <i class="fa fa-chevron-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="bottom">
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Legal</a></li>
+          <li><a href="#">Language</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
@@ -222,7 +313,7 @@
 </body>
 </html>
 
-      <div class="blog-post-content">
+<!--       <div class="blog-post-content">
         <p>
          Website: <%=@restaurant.website%>
         </p>
@@ -231,8 +322,8 @@
         </p>
         <p> 
           <%=@restaurant.specials%>
-        </p>
-        <div class="blog-post-gallery">
+        </p> -->
+<!--         <div class="blog-post-gallery">
           <div class="row">
             <div class="col-sm-6">
               <img src="<%=@restaurant.image %>" style="width: 100%;" data-trigger="zoomerang">
@@ -242,7 +333,7 @@
               <img src="/images/unsplash/photo-1470707592630-d4784581f809.jpeg" class="zoomerang" style="width: 100%; margin-top:38px;" data-trigger="zoomerang">
             </div>
           </div>
-        </div>
+        </div> -->
 
 
 

@@ -131,12 +131,16 @@
    <div class="form-group">
 
   <select v-model="location">
+    <option value="Bucktown">Bucktown</option>
+    <option value="Gold Coast">Gold Coast</option>
     <option value="Lakeview">Lakeview</option>
     <option value="Lincoln Park">Lincoln Park</option>
     <option value="Oak Park">Oak Park</option>
     <option value="Pilsen">Pilsen</option>
     <option value="River North">River North</option>
+    <option value="The Loop">The Loop</option>
     <option value="West Loop">West Loop</option>
+    <option value="West Town">West Town</option>
     <option value="Wicker Park">Wicker Park</option>
   </select>
 </div>
@@ -151,6 +155,8 @@
     <option value="Dressy">Dressy</option>
     <option value="Trendy">Trendy</option>
     <option value="Hipster">Hipster</option>
+    <option value="Hipster">Classy</option>
+    <option value="Hipster">Intimate</option>
   </select>
 </div>
  </div>
@@ -160,7 +166,6 @@
 
    <div class="form-group">
   <select v-model="price">
-    <option value="$">$</option>
     <option value="$$">$$</option>
     <option value="$$$">$$$</option>
     <option value="$$$$">$$$$</option>
@@ -171,13 +176,13 @@
  <!-- <div class="form-action"> -->
   <!-- <button v-on:click="filteredRestaurants('location')" class="btn-shadow btn-shadow-dark">Pick</button> -->
   <h1>Number of matches: {{ filteredRestaurants.length }}</h1>
-  <div v-for="restaurant in filteredRestaurants">
+<!--   <div v-for="restaurant in filteredRestaurants">
     <h2>{{ restaurant.name }}</h2>
     <p>{{ restaurant.address }}</p>
     <p>{{ restaurant.neighborhood }}</p>
     <p>{{ restaurant.guests }}</p>
     <p>{{ restaurant.price }}</p>
-  </div>
+  </div> -->
   <div v-if="filteredRestaurants.length > 0">
     <h1>Random restauraunt</h1>
     <div>
@@ -239,10 +244,10 @@
           </div>
           <ul class="menu">
             <li>
-              <a href="#">Home Pages</a>
+              <a href="#">Home Page</a>
             </li>
             <li>
-              <a href="#">Theme Features</a>
+              <a href="#">Coming Soon</a>
             </li>
             <li>
               <a href="#">Services</a>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/restaurantsall" => "restaurants#home"
   get "/restaurants/:id" => "restaurants#show"
   get "/oysterroulette" => "restaurants#filter"
+  get "/smh" => "restaurants#smh"
 
   get "/newreview" => "oyster_reviews#new"
   post "/oysterreviews" => "oyster_reviews#create"
