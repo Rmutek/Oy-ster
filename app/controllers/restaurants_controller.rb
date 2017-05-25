@@ -22,4 +22,8 @@ class RestaurantsController < ApplicationController
   def smh
     render "smh.html.erb"
   end 
+
+  def about
+    render "about.html.erb"
+  end 
 end
