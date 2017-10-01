@@ -13,7 +13,6 @@ module Capstone
     # -- all .rb files in that directory are automatically loaded.
   end
   
-  config.serve_static_assets = true
 end
 
 
